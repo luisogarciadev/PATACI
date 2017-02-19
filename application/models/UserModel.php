@@ -53,7 +53,7 @@ class UserModel extends CI_Model {
         return $query->result();
     }
 
-    function login($id) {
+    function login() {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
