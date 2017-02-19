@@ -1,0 +1,44 @@
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(167,6,161, 0.4);
+
+}
+
+.intro-header {
+	position: relative;
+}
+
+@keyframes show {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.site-heading > h1, 
+.page-heading > h1,
+.post-heading > h1 {
+	opacity: 0;
+	animation: show ease-in-out 1s forwards;
+	animation-delay: 1s;
+}
+
+.site-heading > hr, 
+.site-heading > span,
+.page-heading > hr, 
+.page-heading > span,
+.post-heading > h2,
+.post-heading > hr, 
+.post-heading > span {
+	opacity: 0;
+	animation: show ease-in-out 1s forwards;
+	animation-delay: 1.5s;
+}
+
+.show-after-intro, footer {
+	opacity: 0;
+	animation: show ease-in-out 1s forwards;
+	animation-delay: 2s;
+}
