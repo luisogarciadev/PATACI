@@ -25,11 +25,18 @@ class Admin extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
+		$this->load->view('adminHeader');
 		$this->load->view('admin');
 		$this->load->view('footer');
 	}
 
 	public function admin() {
 
+	}
+
+	public function login() {
+		$this->load->view('adminHeader');
+		$this->load->view('login');
+		$this->load->view('footer');
 	}
 }

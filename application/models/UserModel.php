@@ -58,8 +58,11 @@ class UserModel extends CI_Model {
         $password = $this->input->post('password');
 
         $userQuery = $this->db->query('SELECT * FROM user WHERE username = \''. $username. '\' AND password = \''.$password.'\'';
-        $user = $userQuery->result();
-        $user = $user[0];
+        $user = NULL;
+        if ($userQuery->num_rows == 1) {
+            $user = $userQuery->result();
+            $user = $user[0];
+        }
 
         return $user;
     }
