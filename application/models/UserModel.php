@@ -36,7 +36,7 @@ class UserModel extends CI_Model {
         $idRole = $this->input->post('idRole');
         $active = $this->input->post('active');
     	
-
+        $this->db->where('id', $id);    
     	$this->db->update('user', $this);
     }
 
