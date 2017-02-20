@@ -24,6 +24,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('isLoggedIn', true);
 			$this->session->set_userdata('userFirstName', $user->firstName);
 			$this->session->set_userdata('userLastName', $user->lastName);
+			$this->session->set_userdata('fullName', $user->firstName . ' ' . $user->lastName);
 			redirect(base_url('admin'));
 		} else {
 			redirect(base_url('login/index'));
