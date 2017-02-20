@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Admin extends CI_Controller {
 
 	function __construct()
     {
         parent::__construct();
     	$this->load->library('session');
+    	$this->isLoggedIn();
     }
 
 	/**
@@ -24,19 +24,33 @@ class Admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index() {
-		$this->load->view('adminHeader');
-		$this->load->view('admin');
-		$this->load->view('footer');
+	function index() {
+		$data['title'] = "Administraci&oacute;n";
+		$data['fullName'] = $this->session->userdata('userFirstName') . ' ' . $this->session->userdata('userLastName');
+		$this->load->adminView("index", $data);
 	}
 
-	public function admin() {
+	function isLoggedIn() {
+        $isLoggedIn = $this->session->userdata('isLoggedIn');
+        
+        if(!isset($isLoggedIn) || $isLoggedIn != true) {
+            redirect(base_url('login/index'));
+        }
+    }
 
-	}
+    function news() {
+		$data['title'] = "Administraci&oacute;n Noticias";
+    	$data['fullName'] = $this->session->userdata('userFirstName') . ' ' . $this->session->userdata('userLastName');
+    	$this->load->model('NewsModel');
+    	$data['news'] = $this->NewsModel->select();	
+    	$this->load->adminView("news", $data);
+    }
 
-	public function login() {
-		$this->load->view('adminHeader');
-		$this->load->view('login');
-		$this->load->view('footer');
-	}
+    function newsEdit($id) {
+    	$data['title'] = "Administraci&oacute;n Noticia";
+    	$data['fullName'] = $this->session->userdata('userFirstName') . ' ' . $this->session->userdata('userLastName');
+    	$this->load->model('NewsModel');
+    	$data['news'] = $this->NewsModel->selectByID($id);	
+    	$this->load->adminView("newsEdit", $data);
+    }
 }

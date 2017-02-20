@@ -22,8 +22,6 @@ class About extends CI_Controller {
 
 		$data['title'] = 'Sobre nosotros';
 
-		$this->load->view('header', $data);
-		$this->load->view('about');
-		$this->load->view('footer');
+		$this->load->publicView('about', $data);
 	}
 }

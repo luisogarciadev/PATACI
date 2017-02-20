@@ -15,7 +15,6 @@
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>css/clean-blog.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/site.css">
 
     <!-- Custom Fonts -->
@@ -52,13 +51,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <?php 
-                    if ($this->session->userdata('is_logged_in') == true) {
+                    if ($this->session->userdata('isLoggedIn') == true) {
                     ?>
+                    <li>
+                        <a>Bienvenido <?php echo $fullName; ?></a>
+                    </li>
                     <li>
                         <a href="<?php echo base_url('Admin'); ?>">Dashboard</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('News'); ?>">Noticias</a>
+                        <a href="<?php echo base_url('Admin/News'); ?>">Noticias</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('Login/Logout'); ?>">Logout</a>
                     </li>
                     <?php 
                     }
@@ -69,3 +74,4 @@
         </div>
         <!-- /.container -->
     </nav>
+    <br><br><br>

@@ -24,13 +24,12 @@ class News extends CI_Controller {
 		$news = $this->NewsModel->selectById($id);
 
 		$data['title'] = $news->header;
+		$data['news'] = $news;
 
-		$this->load->view('header', $data);
-		$this->load->view('post', $news);
-		$this->load->view('footer');
+		$this->load->publicView('post', $data);
 	}
 
 	public function hola($id) {
-		
+
 	}
 }

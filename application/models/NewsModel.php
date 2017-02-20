@@ -63,6 +63,7 @@ class NewsModel extends CI_Model {
 
     function select() {
     	$query = $this->db->get('news');
+        $this->db->order_by('id', 'desc');
         return $query->result();
     }
 
