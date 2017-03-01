@@ -24,7 +24,7 @@ class RoleModel extends CI_Model {
         $id = $this->input->post('id');
         $name = $this->input->post('name');
 
-        $this->db->where('id', $id);       
+        $this->db->where('id', $id);
         $this->db->update('role', $this);
 
     }

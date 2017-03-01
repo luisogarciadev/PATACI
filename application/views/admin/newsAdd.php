@@ -1,21 +1,20 @@
-<form class="form-horizontal container" action="<?php echo base_url('Admin/newsEditPost'); ?>" method="post">
-	<input type="hidden" name="id" id="id" value="<?php echo $news->id; ?>">
+<form class="form-horizontal container" action="<?php echo base_url('Admin/newsAddPost'); ?>" method="post">
 	<div class="form-group">
     	<label for="header" class="col-sm-2 control-label">Encabezado</label>
     	<div class="col-sm-10">
-  			<input type="text" class="form-control" id="header" name="header" placeholder="Encabezado" value="<?php echo $news->header; ?>">
+  			<input type="text" class="form-control" id="header" name="header" placeholder="Encabezado">
 		</div>
   	</div>
   	<div class="form-group">
     	<label for="subHeader" class="col-sm-2 control-label">Subencabezado</label>
     	<div class="col-sm-10">
-      		<input type="text" class="form-control" id="subHeader" name="subHeader" placeholder="Subencabezado" value="<?php echo $news->subHeader; ?>">
+      		<input type="text" class="form-control" id="subHeader" name="subHeader" placeholder="Subencabezado">
     	</div>
   	</div>
   	<div class="form-group">
     	<label for="newsText" class="col-sm-2 control-label">Texto</label>
     	<div class="col-sm-10">
-    		<textarea class="form-control" name="newsText" id="newsText" cols="30" rows="20" placeholder="Texto de la noticia"><?php echo $news->text; ?></textarea>
+    		<textarea class="form-control" name="newsText" id="newsText" cols="30" rows="20" placeholder="Texto de la noticia"></textarea>
     	</div>
   	</div>
   	<div class="form-group">

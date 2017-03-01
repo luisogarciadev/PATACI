@@ -38,4 +38,25 @@ class Admin extends CI_Controller {
     	$data['news'] = $this->NewsModel->selectByID($id);	
     	$this->load->adminView("newsEdit", $data);
     }
+
+    function newsAdd() {
+    	$data['title'] = "Administraci&oacute;n Noticia";
+    	$data['fullName'] = $this->session->userdata('fullName');
+    	$this->load->adminView("newsAdd", $data);
+    }
+
+    function newsEditPost() {
+    	$this->load->model('NewsModel');
+    	$this->firephp->log('test');
+    	$this->NewsModel->update();
+
+    	redirect(base_url('admin/news'));
+    }
+
+    function newsAddPost() {
+    	$this->load->model('NewsModel');
+    	$this->NewsModel->insert();
+
+    	redirect(base_url('admin/news'));
+    }
 }

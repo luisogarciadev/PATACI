@@ -60,7 +60,7 @@ class UserModel extends CI_Model {
         $this->firephp->log($username);
         $this->firephp->log($password);
 
-        $userQuery = $this->db->query('SELECT * FROM user WHERE username = \''. $username. '\' AND password = \''.$password.'\'');
+        $userQuery = $this->db->query('SELECT * FROM user WHERE username = \''. $username. '\' AND password = \''.$password.'\' AND active = 1');
         $user = $userQuery->result();
         if (isset($user[0])) {
             $user = $user[0];

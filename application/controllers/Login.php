@@ -18,13 +18,14 @@ class Login extends CI_Controller {
 	public function loginAttempt() {
 		$this->load->model('UserModel');
 		$user = $this->UserModel->login();
-		$this->firephp->log($this->session->userdata('isLoggedIn'));
+		// $this->firephp->log($this->session->userdata('isLoggedIn'));
 
 		if ($user != NULL) {
 			$this->session->set_userdata('isLoggedIn', true);
 			$this->session->set_userdata('userFirstName', $user->firstName);
 			$this->session->set_userdata('userLastName', $user->lastName);
 			$this->session->set_userdata('fullName', $user->firstName . ' ' . $user->lastName);
+			$this->session->set_userdata('idUser', $user->id);
 			redirect(base_url('admin'));
 		} else {
 			redirect(base_url('login/index'));

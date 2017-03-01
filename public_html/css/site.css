@@ -21,7 +21,7 @@
 .page-heading > h1,
 .post-heading > h1 {
 	opacity: 0;
-	animation: show ease-in-out .5s forwards;
+	animation: show ease-in-out 1s forwards;
 	animation-delay: 0s;
 }
 
@@ -33,12 +33,12 @@
 .post-heading > hr, 
 .post-heading > span {
 	opacity: 0;
-	animation: show ease-in-out .5s forwards;
-	animation-delay: .5s;
+	animation: show ease-in-out 1s forwards;
+	animation-delay: 0s;
 }
 
 .show-after-intro, footer {
 	opacity: 0;
 	animation: show ease-in-out .5s forwards;
-	animation-delay: 1s;
+	animation-delay: .5s;
 }

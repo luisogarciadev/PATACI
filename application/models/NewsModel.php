@@ -18,26 +18,52 @@ class NewsModel extends CI_Model {
     }
 
     function insert() {
+        
     	$header = $this->input->post('header');
     	$subHeader = $this->input->post('subHeader');
-    	$text = $this->input->post('text');
-    	$idUser = $this->input->post('idUser');
-    	$headerImage = $this->input->post('headerImage');
-    	$visible = $this->input->post('visible');
+    	$text = $this->input->post('newsText');
+        $this->load->library('session');
+    	$idUser = $this->session->userdata('idUser');
     	$date = date("Y-m-d H:i:s");
 
-    	$this->db->insert('news', $this);
+        $data = array(
+           'header' => $header,
+           'subHeader' => $subHeader,
+           'text' => $text,
+           'idUser' => $idUser,
+           'headerImage' => "",
+           'visible' => 1,
+           'date' => $date
+        );
+
+    	$this->db->insert('news', $data);
     }
 
     function update() {
+        // $this->firephp->log($this->input->post('header'));
+
+        
+
     	$header = $this->input->post('header');
     	$subHeader = $this->input->post('subHeader');
-    	$text = $this->input->post('text');
-    	$idUser = $this->input->post('idUser');
-    	$headerImage = $this->input->post('headerImage');
-    	$visible = $this->input->post('visible');
+    	$text = $this->input->post('newsText');
+        // $this->firephp->log($this->input->post('newsText'));
 
-    	$this->db->update('news', $this);
+     //    // $this->load->library('session');
+    	// // $idUser = $this->session->userdata('idUser');
+    	// // $headerImage = $this->input->post('headerImage');
+    	// // $visible = $this->input->post('visible');
+
+     //    $this->firephp->log('test');
+        $data = array(
+               'header' => $header,
+               'subHeader' => $subHeader,
+               'text' => $text
+            );
+
+        $this->db->where('id', $this->input->post('id'));
+    	$this->db->update('news', $data);
+        // $this->firephp->log('test');
     }
 
     function selectById($id) {
@@ -45,10 +71,8 @@ class NewsModel extends CI_Model {
     	$query = $this->db->query('SELECT * FROM news WHERE id = '. $id);
     	$news = $query->result();
     	$news = $news[0];
-    	// $this->firephp->log($news);
     	$userQuery = $this->db->query('SELECT * FROM user WHERE id = '. $news->idUser);
     	$user = $userQuery->result();
-    	// $this->firephp->log($user);
     	$news->user = $user[0];
 
     	return $news;

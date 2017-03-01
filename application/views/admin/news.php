@@ -1,3 +1,4 @@
+<a href="<?php echo base_url('Admin/newsAdd'); ?>">A&ntilde;adir noticia</a>
 <?php foreach($news as $item) { ?>
     <div class="post-preview">
         <a href="<?php echo base_url('admin/newsEdit/' . $item->id); ?>">
