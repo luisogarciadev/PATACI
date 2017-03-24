@@ -17,27 +17,30 @@ class UserModel extends CI_Model {
     }
 
     function insert() {
-    	$username = $this->input->post('username');
-    	$password = $this->input->post('password');
-        $firstName = $this->input->post('firstName');
-        $lastName = $this->input->post('lastName');
-        $idRole = $this->input->post('idRole');
-        $active = $this->input->post('active');
+    	$this->username = $this->input->post('username');
+    	$this->password = $this->input->post('password');
+        $this->firstName = $this->input->post('firstName');
+        $this->lastName = $this->input->post('lastName');
+        $this->idRole = $this->input->post('idRole');
+        $this->active = 1;
 
     	$this->db->insert('user', $this);
 
     }
 
     function update() {
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
         $firstName = $this->input->post('firstName');
         $lastName = $this->input->post('lastName');
         $idRole = $this->input->post('idRole');
-        $active = $this->input->post('active');
+
+        $data = array(
+           'firstName' => $firstName,
+           'lastName' => $lastName,
+           'idRole' => $idRole
+        );
     	
-        $this->db->where('id', $id);    
-    	$this->db->update('user', $this);
+        $this->db->where('id', $this->input->post('id'));    
+    	$this->db->update('user', $data);
     }
 
     function selectById($id) {
@@ -49,8 +52,18 @@ class UserModel extends CI_Model {
     }
 
     function select() {
+        $this->db->where('active', 1);
     	$query = $this->db->get('user');
+        $this->firephp->log($query);
         return $query->result();
+    }
+
+    function delete($id) {
+        $data = array(
+            'active' => 0
+        );
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);  
     }
 
     function login() {

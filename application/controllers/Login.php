@@ -26,7 +26,8 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('userLastName', $user->lastName);
 			$this->session->set_userdata('fullName', $user->firstName . ' ' . $user->lastName);
 			$this->session->set_userdata('idUser', $user->id);
-			redirect(base_url('admin'));
+			$this->session->set_userdata('idRole', $user->idRole);
+			redirect(base_url('Admin/News'));
 		} else {
 			redirect(base_url('login/index'));
 		}

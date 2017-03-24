@@ -68,7 +68,7 @@ class NewsModel extends CI_Model {
 
     function selectById($id) {
 		// $this->firephp->log('test');
-    	$query = $this->db->query('SELECT * FROM news WHERE id = '. $id);
+    	$query = $this->db->query('SELECT * FROM news WHERE id = '. $id . ' AND visible = 1');
     	$news = $query->result();
     	$news = $news[0];
     	$userQuery = $this->db->query('SELECT * FROM user WHERE id = '. $news->idUser);
@@ -79,17 +79,24 @@ class NewsModel extends CI_Model {
     }
 
     function selectTop5() {
-
+        $this->db->where('visible', 1);
     	$query = $this->db->get('news', 5);
     	$this->db->order_by('id', 'desc');
         return $query->result();
     }
 
     function select() {
+        $this->db->where('visible', 1);
     	$query = $this->db->get('news');
         $this->db->order_by('id', 'desc');
         return $query->result();
     }
 
-
+    function delete($id) {
+        $data = array(
+            'visible' => 0
+        );
+        $this->db->where('id', $id);
+        $this->db->update('news', $data);  
+    }
 }

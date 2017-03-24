@@ -62,6 +62,15 @@
                     <li>
                         <a href="<?php echo base_url('Admin/News'); ?>">Noticias</a>
                     </li>
+                    <?php
+                        if ($this->session->userdata('idRole') == 1) {
+                    ?>
+                    <li>
+                        <a href="<?php echo base_url('Admin/Users'); ?>">Usuarios</a>
+                    </li>
+                    <?php
+                        }
+                    ?>
                     <li>
                         <a href="<?php echo base_url('Login/Logout'); ?>">Logout</a>
                     </li>

@@ -1,21 +1,19 @@
 <div class="container">
-    <div class="col-xs-12">
-    <a href="<?php echo base_url('Admin/newsAdd'); ?>">A&ntilde;adir noticia</a>
+    <a href="<?php echo base_url('Admin/userAdd'); ?>">A&ntilde;adir usuario</a>
     <br><br><br>
-    <?php foreach($news as $item) { ?>
+    <div class="container">
+    <?php foreach($users as $item) { ?>
         <div class="post-preview">
-            <a href="<?php echo base_url('admin/newsEdit/' . $item->id); ?>">
+            <a href="<?php echo base_url('admin/userEdit/' . $item->id); ?>">
                 <div class="container">
                     <div class="col-xs-4">
-                        <h4>
-                        <?php echo $item->header; ?>
-                        </h4>
+                        <?php echo $item->username; ?>
                     </div>
                     <div class="col-xs-4">
-                        <?php echo $item->subHeader; ?>
+                        <?php echo $item->firstName . ' ' . $item->lastName; ?>
                     </div>
                     <div class="col-xs-4">
-                        <a href="<?php echo base_url('Admin/DeleteNews') . '/' . $item->id; ?>">
+                        <a href="<?php echo base_url('Admin/DeleteUser') . '/' . $item->id; ?>">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
                     </div>
