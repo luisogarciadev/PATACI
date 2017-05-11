@@ -21,14 +21,14 @@
                 <p>PATA A.C. fue fundada en 2012 a partir de la necesidad latente de reducir y controlar la
                 sobrepoblación canina y felina en situación de calle en la ciudad de Tijuana, Baja California.</p>
                 <h2>Objetivos:</h2>
-                <ol>
-                <li>Organizar campañas de esterilización gratuitas y a bajo costo en colonias de bajos
-                recursos.</li>
-                <li>Realizar actividades de interacción que propicien el aprendizaje de los derechos de los
-                animales domésticos y sus cuidados básicos.</li>
-                <li>Utilizar nuestra voz como organización para realizar, apoyar y darle continuidad a
-                propuestas que actualicen y mejoren las leyes de protección animal.</li>
-                </ol>
+                <ul>
+                    <li>Organizar campañas de esterilización gratuitas y a bajo costo en colonias de bajos
+                    recursos.</li>
+                    <li>Realizar actividades de interacción que propicien el aprendizaje de los derechos de los
+                    animales domésticos y sus cuidados básicos.</li>
+                    <li>Utilizar nuestra voz como organización para realizar, apoyar y darle continuidad a
+                    propuestas que actualicen y mejoren las leyes de protección animal.</li>
+                </ul>
             </div>
         </div>
     </div>
