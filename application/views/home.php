@@ -7,8 +7,8 @@
                     <div class="site-heading">
                         <h1>PATA</h1>
                         <hr class="small">
-                        <span class="subheading">Protecci&oacute;n de Animales en Total Abandono</span>
-                        <span class="subheading">En construcci&oacute;n</span>
+                        <span class="subheading">Esteriliza</span>
+                        <span class="subheading">Spay &amp; Neuter</span>
                     </div>
                 </div>
             </div>
