@@ -7,7 +7,7 @@
                     <div class="page-heading">
                         <h1>Sobre Nosotros</h1>
                         <hr class="small">
-                        <span class="subheading">¿C&oacute;mo funciona esto?</span>
+                        <span class="subheading">¿Qui&eacute;nes somos?</span>
                     </div>
                 </div>
             </div>
@@ -18,9 +18,17 @@
     <div class="container show-after-intro">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
+                <p>PATA A.C. fue fundada en 2012 a partir de la necesidad latente de reducir y controlar la
+                sobrepoblación canina y felina en situación de calle en la ciudad de Tijuana, Baja California.</p>
+                <h2>Objetivos:</h2>
+                <ol>
+                <li>Organizar campañas de esterilización gratuitas y a bajo costo en colonias de bajos
+                recursos.</li>
+                <li>Realizar actividades de interacción que propicien el aprendizaje de los derechos de los
+                animales domésticos y sus cuidados básicos.</li>
+                <li>Utilizar nuestra voz como organización para realizar, apoyar y darle continuidad a
+                propuestas que actualicen y mejoren las leyes de protección animal.</li>
+                </ol>
             </div>
         </div>
     </div>
