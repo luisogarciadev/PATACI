@@ -1,6 +1,6 @@
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('<?php echo base_url(); ?>img/home.png')">
+    <header class="intro-header" style="background-image: url('<?php echo base_url(); ?>img/home.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
